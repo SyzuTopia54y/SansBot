@@ -2,7 +2,7 @@ const { create, Client } = require('@open-wa/wa-automate')
 const figlet = require('figlet')
 const options = require('./utils/options')
 const { color, messageLog } = require('./utils')
-const HandleMsg = require('./HandleMsg')
+const syzu = require('./syzu')
 
 const start = (sans = new Client()) => {
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
@@ -78,7 +78,7 @@ const start = (sans = new Client()) => {
                     sans.cutMsgCache()
                 }
             })
-        HandleMsg(sans, message)    
+        syzu(sans, message)    
     
     })
 	
